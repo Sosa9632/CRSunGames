@@ -5,80 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CR Sun Games — Import. Refurbish. Customize.</title>
   <meta name="description" content="CR Sun Games imports, refurbishes, and customizes Japan-exclusive consoles. Build your custom Game Boy or shop pre-made units." />
-  <style>
-    :root {
-      --bg:#0b0e13; --ink:#e6edf3; --muted:#9fb0c2; --panel:#121923;
-      --border:#223142; --accent:#59a9ff; --accent2:#2b74c7;
-      --radius:18px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.5;
-    }
-    header { padding: 1rem 1rem 0.5rem; }
-    .brand { margin: 0; font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--accent); text-align: center; }
-    .banner {
-      max-width: 1100px; margin: .75rem auto 1.25rem; padding: 0 1rem;
-    }
-    .banner img {
-      width: 100%; display: block; border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      object-fit: cover;
-      aspect-ratio: 16/3.8; /* nice tall banner feel; adjust as you like */
-    }
-
-    main { max-width: 1100px; margin: 0 auto; padding: 0 1rem 2rem; }
-    .tabs {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0 1.25rem;
-    }
-    .tab {
-      display: block;
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1rem;
-      text-decoration: none;
-      color: var(--ink);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      transition: transform .06s ease, border-color .2s ease, box-shadow .2s ease;
-    }
-    .tab:hover, .tab:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--accent);
-      box-shadow: 0 14px 34px rgba(0,0,0,.35);
-      outline: none;
-    }
-    .tab h3 { margin: 0 0 .25rem; font-size: 1.1rem; }
-    .tab p { margin: 0; color: var(--muted); }
-
-    .cta {
-      display: inline-block;
-      margin-top: .75rem;
-      padding: .65rem 1rem;
-      background: linear-gradient(180deg, var(--accent), var(--accent2));
-      color: #07111b;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .about {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-    .about h2 { margin: 0 0 .5rem; color: var(--accent); font-size: 1.15rem; }
-    .about p { margin: 0; color: var(--muted); }
-    footer { text-align:center; color: var(--muted); padding: 1.5rem 1rem; }
-    a { color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
@@ -87,7 +14,7 @@
 
   <!-- Banner -->
   <div class="banner">
-    <!-- Update the src path if you put the image elsewhere -->
+    <!-- Put your image at assets/banner.jpg, or change this path -->
     <img src="assets/banner.jpg" alt="CR Sun Games banner featuring consoles on display" />
   </div>
 
@@ -106,7 +33,7 @@
         <span class="cta" aria-hidden="true">Start Building →</span>
       </a>
 
-      <a class="tab" href="#" onclick="alert('Coming soon!'); return false;">
+      <a class="tab" id="tab-third" href="#">
         <h3>Third Tab (Coming Soon)</h3>
         <p>Use this for Repairs, Contact, or FAQ — we can wire it later.</p>
         <span class="cta" aria-hidden="true">Learn More →</span>
@@ -124,10 +51,11 @@
   </main>
 
   <footer>
-    © <span id="y"></span> CR Sun Games — <a href="https://www.etsy.com/shop/CRSunGames" target="_blank" rel="noopener">Etsy</a> ·
+    © <span id="year"></span> CR Sun Games — 
+    <a href="https://www.etsy.com/shop/CRSunGames" target="_blank" rel="noopener">Etsy</a> ·
     <a href="https://www.ebay.com/str/crsungames" target="_blank" rel="noopener">eBay</a>
   </footer>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="script.js" defer></script>
 </body>
 </html>
