@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sp-ips-purple",
+    "title": "GBA SP IPS Mod — Purple",
+    "price": 199.99,
+    "model": "GBA SP",
+    "platform": "Etsy",
+    "img": "https://via.placeholder.com/640x360?text=GBA+SP+IPS+Purple",
+    "url": "https://www.etsy.com/shop/CRSunGames"
+  },
+  {
+    "id": "gba-transparent-usbc",
+    "title": "Game Boy Advance — Transparent Shell + USB-C",
+    "price": 189.99,
+    "model": "GBA",
+    "platform": "eBay",
+    "img": "https://via.placeholder.com/640x360?text=GBA+Transparent+USB-C",
+    "url": "https://www.ebay.com/str/crsungames"
+  },
+  {
+    "id": "gbc-clear-black-buttons",
+    "title": "Game Boy Color — Clear Shell, Black Buttons",
+    "price": 179.99,
+    "model": "GBC",
+    "platform": "Etsy",
+    "img": "https://via.placeholder.com/640x360?text=GBC+Clear+Black",
+    "url": "https://www.etsy.com/shop/CRSunGames"
+  },
+  {
+    "id": "dmg-restored",
+    "title": "Original Game Boy (DMG) — Restored + Glass Lens",
+    "price": 149.99,
+    "model": "DMG",
+    "platform": "eBay",
+    "img": "https://via.placeholder.com/640x360?text=DMG+Restored",
+    "url": "https://www.ebay.com/str/crsungames"
+  }
+]
