@@ -6,70 +6,47 @@
   <title>Shop — CR Sun Games</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Shop-specific additions */
-    .toolbar { display: grid; gap: .6rem; grid-template-columns: 1fr; margin: .75rem 0 1rem; }
-    .toolbar .row { display: grid; gap: .6rem; grid-template-columns: 1fr 1fr; }
-    .toolbar input, .toolbar select {
-      background: #0f141b; color: var(--ink); border: 1px solid var(--border); border-radius: 10px; padding: .55rem .7rem;
+    /* Etsy-like layout tweaks */
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin: .25rem 0 1rem; }
+    .topbar a.back { color: var(--muted); text-decoration: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+    .imgbox { position: relative; background: #0f141b; }
+    .imgbox img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .pad { padding: 1rem; display: flex; flex-direction: column; gap: .5rem; }
+    .title { margin: 0; font-size: 1.02rem; }
+    .price { font-weight: 800; }
+    .meta { color: var(--muted); font-size: .9rem; }
+    .desc { color: var(--ink); opacity: .92; }
+    /* line clamp for Etsy-like short preview; expands on click */
+    .desc[aria-expanded="false"] { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+    .more { color: var(--accent); background: none; border: none; padding: 0; cursor: pointer; font-weight: 600; text-align: left; }
+    .btn {
+      display: inline-block; margin-top: .25rem; padding: .6rem 1rem; border-radius: 10px;
+      background: linear-gradient(180deg, var(--accent), var(--accent2)); color: #07111b; text-decoration: none; font-weight: 700;
+      align-self: start;
     }
-    @media (min-width: 860px){
-      .toolbar { grid-template-columns: 1fr auto auto auto; align-items: center; }
-      .toolbar .row { grid-template-columns: 1fr 1fr; }
-    }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
-    .pad { padding: 1rem; }
-    .title { margin: 0 0 .35rem; font-size: 1rem; }
-    .price { font-weight: 700; }
-    .muted { color: var(--muted); }
-    .meta { display: flex; gap: .5rem; align-items: center; margin: .4rem 0 .7rem; }
-    .badge {
-      font-size: .75rem; border-radius: 999px; padding: .2rem .55rem; border: 1px solid var(--border); color: var(--muted);
-    }
+    .badges { display: flex; gap: .5rem; align-items: center; }
+    .badge { font-size: .75rem; border-radius: 999px; padding: .2rem .55rem; border: 1px solid var(--border); color: var(--muted); }
     .badge.etsy { color: #f0562a; border-color: #f0562a33; }
     .badge.ebay { color: #0064d2; border-color: #0064d233; }
-    .btn {
-      display: inline-block; padding: .6rem 1rem; border-radius: 10px;
-      background: linear-gradient(180deg, var(--accent), var(--accent2)); color: #07111b; text-decoration: none; font-weight: 600;
-    }
-    .empty { color: var(--muted); text-align: center; padding: 2rem 1rem; border: 1px dashed var(--border); border-radius: 12px; }
   </style>
 </head>
 <body>
   <header><h1 class="brand">Shop</h1></header>
-  <main style="max-width:1100px; margin:0 auto; padding:1rem;">
-    <!-- Controls -->
-    <div class="toolbar">
-      <input id="q" type="search" placeholder="Search by title or model (e.g., GBA, SP, GBC, DMG)" />
-      <div class="row">
-        <select id="platform">
-          <option value="">All Platforms</option>
-          <option value="Etsy">Etsy</option>
-          <option value="eBay">eBay</option>
-        </select>
-        <select id="model">
-          <option value="">All Models</option>
-          <option>DMG</option>
-          <option>GBC</option>
-          <option>GBA</option>
-          <option>GBA SP</option>
-        </select>
+
+  <main class="wrap">
+    <div class="topbar">
+      <a class="back" href="index.html">← Back to Home</a>
+      <div class="badges">
+        <span class="badge etsy">Etsy</span>
+        <span class="badge ebay">eBay</span>
       </div>
-      <select id="sort">
-        <option value="">Sort: Featured</option>
-        <option value="price-asc">Price: Low → High</option>
-        <option value="price-desc">Price: High → Low</option>
-        <option value="title-asc">Title: A → Z</option>
-        <option value="title-desc">Title: Z → A</option>
-      </select>
-      <a href="index.html" class="btn">← Home</a>
     </div>
 
-    <!-- Grid -->
     <div id="grid" class="grid"></div>
-    <div id="empty" class="empty" style="display:none">No items match your filters.</div>
+    <p id="empty" class="meta" style="display:none">No products yet. Add items to <code>products.json</code>.</p>
   </main>
 
   <script src="shop.js" defer></script>
