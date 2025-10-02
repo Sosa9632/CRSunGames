@@ -62,3 +62,26 @@ footer a:hover{text-decoration:underline}
 @media (prefers-reduced-motion: reduce){
   .tab{transition:none}
 }
+/* --- Shop page tweaks (optional if you prefer inline in shop.html) --- */
+.toolbar { display: grid; gap: .6rem; grid-template-columns: 1fr; margin: .75rem 0 1rem; }
+.toolbar .row { display: grid; gap: .6rem; grid-template-columns: 1fr 1fr; }
+.toolbar input, .toolbar select {
+  background: #0f141b; color: var(--ink); border: 1px solid var(--border); border-radius: 10px; padding: .55rem .7rem;
+}
+@media (min-width: 860px){
+  .toolbar { grid-template-columns: 1fr auto auto auto; align-items: center; }
+  .toolbar .row { grid-template-columns: 1fr 1fr; }
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.pad { padding: 1rem; }
+.title { margin: 0 0 .35rem; font-size: 1rem; }
+.price { font-weight: 700; }
+.muted { color: var(--muted); }
+.meta { display: flex; gap: .5rem; align-items: center; margin: .4rem 0 .7rem; }
+.badge { font-size: .75rem; border-radius: 999px; padding: .2rem .55rem; border: 1px solid var(--border); color: var(--muted); }
+.badge.etsy { color: #f0562a; border-color: #f0562a33; }
+.badge.ebay { color: #0064d2; border-color: #0064d233; }
+.btn { display: inline-block; padding: .6rem 1rem; border-radius: 10px; background: linear-gradient(180deg, var(--accent), var(--accent2)); color: #07111b; text-decoration: none; font-weight: 600; }
+.empty { color: var(--muted); text-align: center; padding: 2rem 1rem; border: 1px dashed var(--border); border-radius: 12px; }
