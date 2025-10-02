@@ -3,36 +3,40 @@
     "id": "sp-ips-purple",
     "title": "GBA SP IPS Mod — Purple",
     "price": 199.99,
-    "model": "GBA SP",
     "platform": "Etsy",
-    "img": "https://via.placeholder.com/640x360?text=GBA+SP+IPS+Purple",
-    "url": "https://www.etsy.com/shop/CRSunGames"
+    "model": "GBA SP",
+    "img": "https://via.placeholder.com/1200x800?text=GBA+SP+IPS+Purple",
+    "url": "https://www.etsy.com/shop/CRSunGames",
+    "description": "Refurbished GBA SP with new IPS display, cleaned internals, new shell, and a fresh battery. Includes USB-C charge mod and glass lens."
   },
   {
     "id": "gba-transparent-usbc",
-    "title": "Game Boy Advance — Transparent Shell + USB-C",
+    "title": "Game Boy Advance — Transparent + USB-C",
     "price": 189.99,
-    "model": "GBA",
     "platform": "eBay",
-    "img": "https://via.placeholder.com/640x360?text=GBA+Transparent+USB-C",
-    "url": "https://www.ebay.com/str/crsungames"
+    "model": "GBA",
+    "img": "https://via.placeholder.com/1200x800?text=GBA+Transparent+USB-C",
+    "url": "https://www.ebay.com/str/crsungames",
+    "description": "Original GBA restored with transparent shell, new buttons and D-pad, cleaned contacts, optional IPS upgrade, and USB-C charging board."
   },
   {
     "id": "gbc-clear-black-buttons",
     "title": "Game Boy Color — Clear Shell, Black Buttons",
     "price": 179.99,
-    "model": "GBC",
     "platform": "Etsy",
-    "img": "https://via.placeholder.com/640x360?text=GBC+Clear+Black",
-    "url": "https://www.etsy.com/shop/CRSunGames"
+    "model": "GBC",
+    "img": "https://via.placeholder.com/1200x800?text=GBC+Clear+Black",
+    "url": "https://www.etsy.com/shop/CRSunGames",
+    "description": "Crisp clear shell with stealth black buttons. Thoroughly cleaned, tested, and fitted with a new glass lens. Optional backlight mod available."
   },
   {
     "id": "dmg-restored",
     "title": "Original Game Boy (DMG) — Restored + Glass Lens",
     "price": 149.99,
-    "model": "DMG",
     "platform": "eBay",
-    "img": "https://via.placeholder.com/640x360?text=DMG+Restored",
-    "url": "https://www.ebay.com/str/crsungames"
+    "model": "DMG",
+    "img": "https://via.placeholder.com/1200x800?text=DMG+Restored",
+    "url": "https://www.ebay.com/str/crsungames",
+    "description": "Classic DMG restored: shell cleaned, caps replaced where needed, new speaker foam, replacement glass lens, fully tested. Great collector piece."
   }
 ]
