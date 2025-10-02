@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Custom Game Boy Visualizer</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    #preview {
+      margin: 1rem auto;
+      display: block;
+      width: 250px;
+      height: auto;
+    }
+    label {display:block; margin:.5rem 0 .2rem;}
+    select {padding:.4rem; border-radius:6px;}
+    .form {max-width:400px; margin:auto; background:#121923; padding:1rem; border:1px solid #223142; border-radius:12px;}
+  </style>
+</head>
+<body>
+  <header><h1 class="brand">Custom Game Boy Visualizer</h1></header>
+  <main>
+    <div class="form">
+      <label for="model">Model:</label>
+      <select id="model">
+        <option value="gba">Game Boy Advance</option>
+        <option value="sp">Game Boy Advance SP</option>
+        <option value="gbc">Game Boy Color</option>
+        <option value="dmg">Original Game Boy</option>
+      </select>
+
+      <label for="shell">Shell Color:</label>
+      <select id="shell">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="black">Black</option>
+        <option value="gray">Gray</option>
+      </select>
+
+      <label for="buttons">Button Color:</label>
+      <select id="buttons">
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+      </select>
+
+      <label for="dpad">D-Pad Color:</label>
+      <select id="dpad">
+        <option value="black">Black</option>
+        <option value="gray">Gray</option>
+        <option value="red">Red</option>
+      </select>
+
+      <label for="triggers">Trigger Color:</label>
+      <select id="triggers">
+        <option value="gray">Gray</option>
+        <option value="black">Black</option>
+        <option value="red">Red</option>
+      </select>
+    </div>
+
+    <!-- Preview SVG -->
+    <svg id="preview" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+      <rect id="shellRect" x="10" y="10" width="180" height="280" rx="20" fill="red"/>
+      <circle id="btnA" cx="140" cy="180" r="12" fill="black"/>
+      <circle id="btnB" cx="165" cy="165" r="12" fill="black"/>
+      <rect id="dpad" x="50" y="170" width="20" height="20" fill="black"/>
+      <rect id="triggerL" x="20" y="10" width="40" height="10" fill="gray"/>
+      <rect id="triggerR" x="140" y="10" width="40" height="10" fill="gray"/>
+    </svg>
+  </main>
+  <script>
+    const shell = document.getElementById('shell');
+    const buttons = document.getElementById('buttons');
+    const dpad = document.getElementById('dpad');
+    const triggers = document.getElementById('triggers');
+    const model = document.getElementById('model');
+
+    function render() {
+      document.getElementById('shellRect').setAttribute('fill', shell.value);
+      document.getElementById('btnA').setAttribute('fill', buttons.value);
+      document.getElementById('btnB').setAttribute('fill', buttons.value);
+      document.getElementById('dpad').setAttribute('fill', dpad.value);
+      document.getElementById('triggerL').setAttribute('fill', triggers.value);
+      document.getElementById('triggerR').setAttribute('fill', triggers.value);
+    }
+
+    [shell, buttons, dpad, triggers, model].forEach(sel => sel.addEventListener('change', render));
+
+    render(); // initial
+  </script>
+</body>
+</html>
